@@ -24,7 +24,8 @@ class Konstitsiya_Bob(models.Model):
 class Konstitsiya_Modda(models.Model):
     raqam = models.PositiveSmallIntegerField()
     matn = models.TextField()
-    bobFK = models.ForeignKey(Konstitsiya_Bob, on_delete=models.CASCADE)
+    bolimFK = models.ForeignKey(Konstitsiya_Bolim, on_delete=models.CASCADE, null=True, blank=True)
+    bobFK = models.ForeignKey(Konstitsiya_Bob, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self): return f"{self.raqam} - modda"
 
 
